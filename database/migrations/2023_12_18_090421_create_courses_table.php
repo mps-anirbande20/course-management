@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHotelEnquiriesTable extends Migration
+class CreateCoursesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateHotelEnquiriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('hotel_enquiries', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('phone');
-            $table->string('email');
-            $table->text('message');
-            $table->integer('hotel');
+            $table->string('title');
+            $table->string('price');
+            $table->text('short_info');
+            $table->string('status');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateHotelEnquiriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hotel_enquiries');
+        Schema::dropIfExists('courses');
     }
 }

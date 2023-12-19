@@ -1,0 +1,65 @@
+@media screen and (max-width:1200px){
+    
+}
+@media screen and (max-width:992px){
+   .faq-question{
+      width: 90%;
+   }
+   .answer-content p{
+      width: 80%;
+   }
+}
+@media screen and (max-width:768px){
+     form .register{
+        margin: 0 10px 0 0;
+     }
+     .hero h1{
+      font-size: 38px;
+      text-align: center;
+     }
+     .hero p{
+      width: 90%;
+     }
+}
+@media screen and (max-width:560px){
+     .hero{
+        padding: 40px 0;
+     }
+     .course .card img{
+      height: 250px;
+      object-fit: cover;
+     }
+     .bottom-content .card {
+      flex-direction: column !important;
+     }
+     .bottom-content .card .card-text{
+      font-size: 11px;
+     }
+     .bottom-content .card .card-body{
+      text-align: center;
+     }
+     .copyright p{
+      font-size: 12px;
+     }
+     .answer-content p{
+      width: 54%;
+     }
+}
+@media screen and (max-width:400px){
+   .btn-success{
+      font-size: 12px;
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+   .btn-outline-success{
+      font-size: 12px;
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+   .hero h1{
+      font-size: 28px;
+   }
+   .hero h3{
+      font-size: 20px;
+   }
+}

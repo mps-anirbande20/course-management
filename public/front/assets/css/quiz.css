@@ -1,0 +1,33 @@
+.quiz-question{
+    background: #F8F8F8;
+    padding-bottom: 150px;
+}
+.quiz-question h2{
+    font-size: 14px;
+    font-weight: 600;
+}
+.quiz-question .question p{
+    font-size: 12px;
+}
+input[type="radio"] {
+    accent-color: green;
+ }
+ .answer label{
+    font-size: 12px;
+ }
+ .answer-dot{
+    gap: 10px;
+    margin-bottom: 10px;
+ }
+ .submit-btn{
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 15px;
+ }
+ .submit-btn .btn-success{
+    border-radius: 0 !important;
+    padding: 6px 25px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+ }

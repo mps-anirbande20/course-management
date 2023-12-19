@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HotelEnquiry extends Model
+class Course extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','phone','email','message','package'];
+    protected $fillable = ['title','price','short_info','status','slug'];
 }

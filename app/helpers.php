@@ -22,7 +22,7 @@ function getby($tab,$col,$val){
     return DB::table($tab)->where($col, $val)->first();
 }
 
-function count_blog_in_cat($cat){
+function count_lesson_in_course($cat){
 
-    return count(DB::table('blogs')->where('category',$cat)->get());
+    return count(DB::table('lessons')->where('course',$cat)->get());
 }

@@ -1,478 +1,135 @@
 @section('title')
 
-
-
 {{$title}}
-
-
 
 @endsection
 
-
-
 @extends('front.layout')
-
-
 
 @section('content')
 
-    <div class="hero">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-6 col-12 left">
-                      <h2>It’s a big world out there,go explore</h2>
-                      <p>Distinctio modi perspiciatis autem. Eos provident similique impedit iusto dolorem in. Nisi numquam modi quasi est ipsa quia non perspiciatis iste. </p> 
-                      <button class="btn contact" type="submit" data-toggle="modal" data-target="#exampleModal">Book Now</button>
-                      <div class="social-link">
-                          <p class="mb-4">Connect with Us</p>
-                          <div class="social-icon d-flex">
-                            <a href="" class="mr-2 d-flex justify-content-center align-items-center"><i class="fa-brands fa-facebook mr-1"></i> <span>Facebook</span></a>
-                            <a href="" class="d-flex justify-content-center align-items-center"><i class="fa-brands fa-whatsapp mr-1"></i> <span>Whatsapp</span></a>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6 col-12 right d-flex">
-                      <div class="first-column column">
-                        <img src="{{asset('front/assets/images/hero image 1.png')}}" alt="" class="img-fluid img-1">
-                        <img src="{{asset('front/assets/images/hero image 2.png')}}" alt="" class="img-fluid">
-                      </div>
-                      <div class="second-column column">
-                        <img src="{{asset('front/assets/images/hero image 3.png')}}" alt="" class="img-fluid h-100">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </header>
-
-    <main>
-
-      <!-- about section start  -->
-
-      <section class="about section" id="about">
+<main>
+    <!-- hero section start  -->
+    <section class="hero">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-12 left">
-              <div class="first-row my-row">
-                <img src="{{asset('front/assets/images/about img 1.png')}}" alt="" class="img-fluid">
-              </div>
-              <div class="second-row my-row">
-                <img src="{{asset('front/assets/images/about img 2.png')}}" alt="" class="img-fluid">
-                <img src="{{asset('front/assets/images/about img 3.png')}}" alt="" class="img-fluid">
-              </div>
-            </div>
-            <div class="col-lg-6 col-12 right">
-              <h4>About us</h4>
-              <h2>Explore the world with us</h2>
-              <p>Distinctio modi perspiciatis autem. Eos provident similique impedit iusto dolorem in. Nisi numquam modi quasi est ipsa quia non perspiciatis iste. </p>
-              <h5>Features are as follows : </h5>
-              <div class="box">
-                <p><img src="{{asset('front/assets/images/Forward Button.png')}}" alt=""><span>Natus ipsum eveniet.</span></p>
-                <p>At perspiciatis pariatur illo fuga cum. Quam minus sit dolorum et. Exercitationem necessitatibus eius minus quam. Facere labore </p>
-              </div>
-              <div class="box">
-                <p><img src="{{asset('front/assets/images/Forward Button.png')}}" alt=""><span>Natus ipsum eveniet.</span></p>
-                <p>At perspiciatis pariatur illo fuga cum. Quam minus sit dolorum et. Exercitationem necessitatibus eius minus quam. Facere labore </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- about section end  -->
-
-      <!-- packages section start  -->
-
-        <section class="packages section" id="packages">
-          <div class="container">
-            <h4>PACKAGES</h4>
-            <div class="tab-section d-flex justify-content-between">
-              <div class="left">
-                <p><span>Our Top Packages</span><a href="packages.html">EXPLORE ALL</a></p>
-              </div>
-              <div class="right d-flex">
-                <div class="tab-button tab-button-1 active-btn" data-tab="tab1"><i class="fa-solid fa-car mr-1"></i>Domestic</div>
-                <div class="tab-button tab-button-2" data-tab="tab2"><i class="fa-solid fa-plane-departure mr-1"></i>International</div>
-              </div>
-          </div>
-          <div id="tab1" class="tab active-tab">
-            <div class="owl-carousel tab-box owl-theme">
-                @if($packages)
-                    @foreach($packages as $pkgs)
-                        @if($pkgs->ptype == 'Domestic')
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="{{asset('front/assets/images/hotel image.png')}}" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="{{asset('front/assets/images/hotel image.png')}}" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="{{asset('front/assets/images/hotel image.png')}}" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <h5>Kerala1</h5>
-                  <p class="para-time"><img src="{{asset('front/assets/images/Open Parcel.png')}}" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              @endif
-            @endforeach
-        @endif
-
-
-              
-              
-              
-          </div>
-          <p class="para-packages">Packages</p>
-          <hr class="line">
-          </div>
-          <div id="tab2" class="tab">
-            <div class="owl-carousel tab-box owl-theme">
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <h5>America1</h5>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <h5>America2</h5>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <h5>America3</h5>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <h5>America4</h5>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <h5>America5</h5>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <p class="para-packages">Packages</p>
-          <hr class="line">
-          </div>
-          </div>
-        </section>
-        <!-- packages section end  -->
-
-        <!-- hotel section start  -->
-        <section class="hotels packages section" id="hotels">
-          <div class="container">
-            <h4>HOTELS</h4>
-            <div class="tab-section d-flex justify-content-between">
-              <div class="left">
-                <p><span>Our Top Packages</span><a href="hotels.html">EXPLORE ALL</a></p>
-              </div>
-          </div>
-          <div class="tab active-tab active-1">
-            <div class="owl-carousel tab-box owl-theme">
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <div class="hotel-title d-flex justify-content-between align-items-center">
-                    <h5>Hotel Name</h5>
-                    <h6>📍Delhi</h6>
-                  </div>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <div class="hotel-title d-flex justify-content-between align-items-center">
-                    <h5>Kerala1</h5>
-                    <h6>📍Delhi</h6>
-                  </div>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <div class="hotel-title d-flex justify-content-between align-items-center">
-                    <h5>Kerala1</h5>
-                    <h6>📍Delhi</h6>
-                  </div>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <div class="hotel-title d-flex justify-content-between align-items-center">
-                    <h5>Kerala1</h5>
-                    <h6>📍Delhi</h6>
-                  </div>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-              <div class="item tab-box-item">
-                <div class="tab-box-img-slider">
-                  <div class="owl-carousel img-slider owl-theme">
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                    <div class="item">
-                      <img src="./images/package-tab-image.png" alt="">
-                    </div>
-                  </div>
-                </div>
-                <div class="tab-box-details">
-                  <div class="hotel-title d-flex justify-content-between align-items-center">
-                    <h5>Kerala1</h5>
-                    <h6>📍Delhi</h6>
-                  </div>
-                  <p class="para-time"><img src="./images/Open Parcel.png" alt="" class="small-img"><span>2 day 3 nights</span><img src="./images/Car1.png" alt="" class="small-img"><span>Travel arrangeme</span></p>
-                  <div class="money d-flex justify-content-between align-items-center">
-                    <p>&#x20b9; 10,000</p>
-                    <button class="btn contact" type="submit" data-toggle="modal" data-target="#book-now">Book Now</button>
-                  </div>
-                </div>
-              </div>
-          </div>
-          <p class="para-packages">Hotels</p>
-          <hr class="line line-2">
-          </div>
-          </div>
-        </section>
-
-        <!-- hotel section end  -->
-
-        <!-- service section start  -->
-
-        <section class="services section" id="services">
-          <div class="container">
-            <h4>SERVICES</h4>
-            <h2>Services we offer ?</h2>
-            <p class="para">Distinctio modi perspiciatis autem. Eos provident similique impedit iusto dolorem in. Nisi numquam modi quasi est ipsa quia non perspiciatis iste. </p>
             <div class="row">
-              <div class="col-lg-4 col-12">
-                <div class="box">
-                  <div class="img-box d-flex">
-                    <div class="img">
-                      <img src="{{asset('front/assets/images/service image 1.png')}}" alt="">
-                    </div>
-                    <div class="text">
-                      <h5><span>International</span> travels</h5>
-                      <p>We provide the following :</p>
-                    </div>
-                  </div>
-                  <p class="para-1">🚕 Travel arrangement. <br> 
-                    ✈️ Flight tickets , passport and visa. <br>
-                    🛌 Hotel stays.</p>
+                <div class="col-12 d-flex justify-content-center align-items-center flex-column">
+                <h1>Learn in-demand skills.</h1>
+                <h3>with <span>audio books</span></h3>
+                <p>The most efficient and supportive way for you to learn in-demand skills, get hired, and advance your career.</p>
+                <div class="hero-button d-flex justify-content-center align-items-center gap-3">
+                    <a href="" class="btn btn-success">See All Course</a>
+                    <a href="" class="btn btn-outline-success">How To Study</a>
                 </div>
-              </div>
-              <div class="col-lg-4 col-12">
-                <div class="box">
-                  <div class="img-box d-flex">
-                    <div class="img">
-                      <img src="{{asset('front/assets/images/service image 2.png')}}" alt="">
-                    </div>
-                    <div class="text">
-                      <h5><span>Domestic</span> travels</h5>
-                      <p>We provide the following :</p>
-                    </div>
-                  </div>
-                  <p class="para-1">🚕 Travel arrangement. <br> 
-                    ✈️ Flight tickets , passport and visa. <br>
-                    🛌 Hotel stays.</p>
                 </div>
-              </div>
-              <div class="col-lg-4 col-12">
-                <div class="box">
-                  <div class="img-box d-flex">
-                    <div class="img">
-                      <img src="{{asset('front/assets/images/service image 3.png')}}" alt="">
-                    </div>
-                    <div class="text">
-                      <h5><span>Solo</span> travels</h5>
-                      <p>We provide the following :</p>
-                    </div>
-                  </div>
-                  <p class="para-1">🚕 Travel arrangement. <br> 
-                    ✈️ Flight tickets , passport and visa. <br>
-                    🛌 Hotel stays.</p>
-                </div>
-              </div>
             </div>
-          </div>
-        </section>
-
-        <!-- service section end -->
-    </main>
-
-
+        </div>
+    </section>
+    <!-- hero section end  -->
+    <!-- about section start  -->
+    <section class="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 col-12">
+                    <div class="about-img">
+                        <img src="{{asset('front/assets/image/Rectangle 31.png')}}" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 col-12">
+                    <h2>About Us</h2>
+                    <p>Necessitatibus laborum iusto. Deleniti velit nisi ex magni. Neque occaecati mollitia. Ad repudiandae nulla. Aut nesciunt aperiam harum. Tempora dignissimos placeat quod explicabo atque. <br>
+                      Hic accusantium voluptatibus ad. Odit aspernatur ipsa. Voluptas nulla quos cumque repudiandae cum labore ea inventore. <br>
+                      Atque dolorem reprehenderit. Velit fugit facilis. Sapiente quia illum voluptatum dolorum nesciunt impedit nulla beatae inventore. Atque nobis aspernatur fugiat aliquam voluptate laudantium nesciunt accusantium corporis. Velit amet eius voluptatum amet eum ipsa. Quaerat explicabo sapiente minima fugit accusamus amet in sed rem.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about section end -->
+    <!-- course section start  -->
+    <section class="course" id="course">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>Our Courses</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="row card-section">
+                @isset($courses)
+                @foreach($courses as $c)
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12 px-2">
+                    <div class="card">
+                        <img src="{{asset('front/assets/image/image 1.png')}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">{{$c->title}}</h5>
+                          <p class="card-text">{{$c->short_info}}</p>
+                          <div class="course-button d-flex justify-content-between align-items-center">
+                            <a href="{{url('course/'.$c->slug)}}" class="btn btn-success">Start Learning</a>
+                            <a href="#" class="btn btn-outline-success">{{count_lesson_in_course($c->id)}} modules</a>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                @endforeach
+                @endisset
+                
+                
+                
+            </div>
+        </div>
+    </section>
+    <!-- course section end -->
+    <!-- contact section start  -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 col-12 d-flex flex-column justify-content-between">
+                    <div class="top-content">
+                        <h4>Contact</h4>
+                        <h1>Get In Touch</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur. Consectetur in curabitur consectetur quis diam ut tortor. Arcu sagittis adipiscing non aliquam donec id nibh diam.</p>
+                    </div>
+                    <div class="bottom-content d-flex gap-2">
+                        <div class="card flex-row justify-content-center align-items-center w-100">
+                            <div class="phone-icon">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div class="card-body">
+                              <h5>Call Us</h5>
+                              <p class="card-text">+91 874284872573</p>
+                            </div>
+                          </div>
+                        <div class="card flex-row justify-content-center align-items-center w-100">
+                            <div class="phone-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div class="card-body">
+                              <h5>Whatsapp</h5>
+                              <p class="card-text">+91 874284872573</p>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 form">
+                    <form method="post" action="{{url('contact-us')}}">
+                        <div class="mb-3">
+                          <input type="text" class="form-control" required name="name" id="exampleInputName1" aria-describedby="NameHelp" placeholder="Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="exampleInputEmail1" required name="email" aria-describedby="emailHelp" placeholder="Email">
+                          </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" required name="message" id="" rows="5" placeholder="Type Your Message Here..."></textarea>
+                          </div>@csrf
+                          <div class="button d-flex justify-content-end">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                          </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact section end -->
+</main>
 
 @endsection

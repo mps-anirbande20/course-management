@@ -66,11 +66,11 @@
 
                         <form method="post" action="@isset($data)
 
-                        {{url('/admin/blogcategory/update/'.$data->id)}}
+                        {{url('/admin/courses/update/'.$data->id)}}
 
                         @else
 
-                        {{url('/admin/blogcategory/store')}}
+                        {{url('/admin/courses/store')}}
 
                         @endisset" enctype="multipart/form-data">
 
@@ -80,11 +80,36 @@
 
                                     <div class="form-group row">
 
-                                        <label class="col-lg-3 col-form-label">Title (en)</label>
+                                        <label class="col-lg-3 col-form-label">Title</label>
 
                                         <div class="col-lg-9">
 
-                                            <input type="text" class="form-control" required name="title_en" value="{{isset($data)?$data->title_en:''}}">
+                                            <input type="text" class="form-control" required name="title" value="{{isset($data)?$data->title:''}}">
+
+                                        </div>
+
+                                    </div>
+
+                                
+                                    <div class="form-group row">
+
+                                        <label class="col-lg-3 col-form-label"> Shortinfo</label>
+
+                                        <div class="col-lg-9">
+
+                                            <textarea class="form-control" name="info" rows="10">{{isset($data)?$data->info:''}}</textarea>
+
+                                        </div>
+
+                                    </div>  
+
+                                    <div class="form-group row">
+
+                                        <label class="col-lg-3 col-form-label"> Price (₹)</label>
+
+                                        <div class="col-lg-9">
+
+                                            <input type="text" class="form-control" required name="price" value="{{isset($data)?$data->price:''}}">
 
                                         </div>
 
@@ -92,11 +117,11 @@
 
                                     <div class="form-group row">
 
-                                        <label class="col-lg-3 col-form-label">Title (fr)</label>
+                                        <label class="col-lg-3 col-form-label">Image</label>
 
                                         <div class="col-lg-9">
 
-                                            <input type="text" class="form-control" name="title_fr" value="{{isset($data)?$data->title_fr:''}}">
+                                            <input type="file" class="form-control" name="thumb">
 
                                         </div>
 
@@ -119,6 +144,18 @@
                                         </div>
 
                                     </div>
+
+                                    <!--div class="form-group row">
+
+                                        <label class="col-lg-3 col-form-label">Description </label>
+
+                                        <div class="col-lg-9">
+
+                                            <textarea class="form-control" name="description" rows="10">{{isset($data)?$data->description:''}}</textarea>
+
+                                        </div>
+
+                                    </div-->
 
                                 </div>
 

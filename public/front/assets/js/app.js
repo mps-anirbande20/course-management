@@ -1,73 +1,30 @@
-$(document).ready(function(){
-    $('.owl-carousel.tab-box').owlCarousel({
-        loop:false,
-        margin:10,
-        nav:true,
-        dots:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            767:{
-                items:2
-            },
-            1000:{
-                items:4
-            }
-        }
-    })
-    $('.owl-carousel.img-slider').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:false,
-        dots:true,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        }
-    })
-    $('.owl-carousel.modal-hotel-img').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        dots:false,
-        responsive:{
-            0:{
-                items:1
-            },
-            600:{
-                items:1
-            },
-            1000:{
-                items:1
-            }
-        }
-    })
+// code for faq section --------------
 
-    $(".tab-button").click(function() {
-        let tabId = $(this).attr("data-tab");
+const faqItems = document.querySelectorAll('.faq-item');
 
-        $('.tab-button').each(function( ) {
-            if($(this).hasClass('active-btn')){
-                $(this).removeClass('active-btn')
-            }
-        });
-        if($(this).hasClass('active-btn')){
-            $(this).removeClass('active-btn')
-        } else {
-            $(this).addClass('active-btn')
-        }
+faqItems.forEach(item => {
+  const question = item.querySelector('.faq-question');
+  const answer = item.nextElementSibling;
+  const icon = item.querySelector('i');
 
-        $(".tab").removeClass("active-tab");
+  item.addEventListener('click', () => {
+    faqItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        const otherAnswer = otherItem.nextElementSibling;
+        const otherIcon = otherItem.querySelector('i');
 
-        $("#" + tabId).addClass("active-tab");
+        otherAnswer.classList.remove('active');
+        otherIcon.classList.remove('active');
+        otherAnswer.style.maxHeight = "0";
+      }
     });
 
-})
+    answer.classList.toggle('active');
+    icon.classList.toggle('active');
+    if (answer.classList.contains('active')) {
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    } else {
+      answer.style.maxHeight = "0";
+    }
+  });
+});

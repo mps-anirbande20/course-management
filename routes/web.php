@@ -26,15 +26,25 @@ use Illuminate\Support\Facades\Route;
 
 */
 
-
-
 Route::get('/', [App\Http\Controllers\Front\HomeController::class, 'index']);
 
-Route::get('/blog', [App\Http\Controllers\Front\BlogController::class, 'index']);
+//Route::get('/blog', [App\Http\Controllers\Front\BlogController::class, 'index']);
 
-Route::get('/blog/{slug}', [App\Http\Controllers\Front\BlogController::class, 'detail']);
+//Route::get('/blog/{slug}', [App\Http\Controllers\Front\BlogController::class, 'detail']);
 
-Route::get('/blog-category/{slug}', [App\Http\Controllers\Front\BlogController::class, 'category']);
+//Route::get('/blog-category/{slug}', [App\Http\Controllers\Front\BlogController::class, 'category']);
+
+//Route::get('/customer-signup', [App\Http\Controllers\Front\HomeController::class, 'create']);
+
+Route::post('/csignup', [App\Http\Controllers\Front\HomeController::class, 'csignup']);
+
+Route::post('/contact-us', [App\Http\Controllers\Front\HomeController::class, 'contact']);
+
+Route::post('/clogin', [App\Http\Controllers\Front\HomeController::class, 'clogin']);
+
+Route::get('/clogout', [App\Http\Controllers\Front\HomeController::class, 'clogout']);
+
+Route::get('/course/{slug}', [App\Http\Controllers\Front\HomeController::class, 'course']);
 
 Route::get('/admin', [App\Http\Controllers\Admin\UserController::class, 'index']);
 
@@ -52,38 +62,55 @@ Route::middleware([App\Http\Middleware\Login::class])->group(function(){
 
    
 
-   Route::get('/admin/packages', [App\Http\Controllers\Admin\PackagesController::class, 'index']);
+   Route::get('/admin/courses', [App\Http\Controllers\Admin\CourseController::class, 'index']);
 
-   Route::get('/admin/packages/create', [App\Http\Controllers\Admin\PackagesController::class, 'create']);
+   Route::get('/admin/courses/create', [App\Http\Controllers\Admin\CourseController::class, 'create']);
 
-   Route::post('/admin/packages/store', [App\Http\Controllers\Admin\PackagesController::class, 'store']);
+   Route::post('/admin/courses/store', [App\Http\Controllers\Admin\CourseController::class, 'store']);
 
-   Route::get('/admin/packages/edit/{id}', [App\Http\Controllers\Admin\PackagesController::class, 'edit']);
+   Route::get('/admin/courses/edit/{id}', [App\Http\Controllers\Admin\CourseController::class, 'edit']);
 
-   Route::post('/admin/packages/update/{id}', [App\Http\Controllers\Admin\PackagesController::class, 'update']);
+   Route::post('/admin/courses/update/{id}', [App\Http\Controllers\Admin\CourseController::class, 'update']);
 
-   Route::get('/admin/packages/destroy/{id}', [App\Http\Controllers\Admin\PackagesController::class, 'destroy']);
+   Route::get('/admin/courses/destroy/{id}', [App\Http\Controllers\Admin\CourseController::class, 'destroy']);
 
-   Route::get('/admin/packages/query/{id}', [App\Http\Controllers\Admin\PackagesController::class, 'query']);
-
-
-   Route::get('/admin/hotels', [App\Http\Controllers\Admin\HotelsController::class, 'index']);
-
-   Route::get('/admin/hotels/create', [App\Http\Controllers\Admin\HotelsController::class, 'create']);
-
-   Route::post('/admin/hotels/store', [App\Http\Controllers\Admin\HotelsController::class, 'store']);
-
-   Route::get('/admin/hotels/edit/{id}', [App\Http\Controllers\Admin\HotelsController::class, 'edit']);
-
-   Route::post('/admin/hotels/update/{id}', [App\Http\Controllers\Admin\HotelsController::class, 'update']);
-
-   Route::get('/admin/hotels/destroy/{id}', [App\Http\Controllers\Admin\HotelsController::class, 'destroy']);
-
-   Route::get('/admin/hotels/query/{id}', [App\Http\Controllers\Admin\HotelsController::class, 'query']);
+   Route::get('/admin/courses/query/{id}', [App\Http\Controllers\Admin\CourseController::class, 'query']);
 
 
 
+   Route::get('/admin/lessons', [App\Http\Controllers\Admin\LessonController::class, 'index']);
 
+   Route::get('/admin/lessons/create', [App\Http\Controllers\Admin\LessonController::class, 'create']);
+
+   Route::post('/admin/lessons/store', [App\Http\Controllers\Admin\LessonController::class, 'store']);
+
+   Route::get('/admin/lessons/edit/{id}', [App\Http\Controllers\Admin\LessonController::class, 'edit']);
+
+   Route::post('/admin/lessons/update/{id}', [App\Http\Controllers\Admin\LessonController::class, 'update']);
+
+   Route::get('/admin/lessons/destroy/{id}', [App\Http\Controllers\Admin\LessonController::class, 'destroy']);
+
+
+
+
+
+
+
+   Route::get('/admin/lessons/mcq/{id}', [App\Http\Controllers\Admin\LessonController::class, 'mcq']);
+
+   Route::get('/admin/lessons/mcq/create/{id}', [App\Http\Controllers\Admin\LessonController::class, 'mcqcreate']);
+
+   Route::post('/admin/lessons/mcq/store', [App\Http\Controllers\Admin\LessonController::class, 'mcqstore']);
+
+   Route::get('/admin/lessons/mcq/edit/{id}', [App\Http\Controllers\Admin\LessonController::class, 'mcqedit']);
+
+   Route::post('/admin/lessons/mcq/update/{id}', [App\Http\Controllers\Admin\LessonController::class, 'mcqupdate']);
+
+   Route::get('/admin/lessons/destroy/{id}', [App\Http\Controllers\Admin\LessonController::class, 'mcqdestroy']);
+
+
+
+   Route::get('/admin/contacts', [App\Http\Controllers\Admin\DashboardController::class, 'contacts']);
 
 
 
@@ -127,5 +154,5 @@ Route::middleware([App\Http\Middleware\Login::class])->group(function(){
 });
 
 
-//Artisan::call('make:model HotelEnquiry -m');
+//Artisan::call('make:model Contact -m');
 //Artisan::call('migrate');

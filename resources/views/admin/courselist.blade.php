@@ -48,7 +48,7 @@
 
                     <div class="card-header">
 
-                        <h4 class="card-title mb-0">{{$page}} Information <a href="{{url('admin/blogcategory/create')}}" class="btn btn-primary"><i class="fa fa-plus"></i></a></h4>
+                        <h4 class="card-title mb-0">{{$page}} Information <a href="{{url('admin/courses/create')}}" class="btn btn-primary"><i class="fa fa-plus"></i></a></h4>
 
                     </div>
 
@@ -80,8 +80,6 @@
 
                                         <th>Created</th>
 
-                                        <th>Updated</th>
-
                                         <th>Action</th>
 
                                     </tr>
@@ -100,19 +98,17 @@
 
                                         <td>{{$srl++}}</td>
 
-                                        <td>{{$data->title_en}}</td>
+                                        <td><!-- <img src="{{asset('uploads/'.$data->thumb)}}" width="50" height="50" style="border-radius: 50%;"> --> {{$data->title}}</td>
 
                                         <td>{{$data->status}}</td>
 
-                                        <td>{{date('d-F-Y',strtotime($data->created_at))}}</td>
-
-                                        <td>{{date('d-F-Y',strtotime($data->updated_at))}}</td>
+                                        <td>{{date('d-m-Y',strtotime($data->created_at))}}</td>
 
                                         <td>
 
-                                            <a href="{{url('admin/blogcategory/edit/'.$data->id)}}" class="btn btn-warning"><i class="fa fa-pencil"></i></a> 
+                                            <a href="{{url('admin/courses/edit/'.$data->id)}}" class="btn btn-warning"><i class="fa fa-pencil"></i></a> 
 
-                                            <a href="{{url('admin/blogcategory/destroy/'.$data->id)}}" class="btn btn-danger destroy"><i class="fa fa-trash"></i></a>
+                                            <a href="{{url('admin/courses/destroy/'.$data->id)}}" class="btn btn-danger destroy"><i class="fa fa-trash"></i></a>
 
                                         </td>
 

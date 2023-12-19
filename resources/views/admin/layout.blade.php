@@ -120,7 +120,7 @@
 
                 <div class="page-title-box">
 
-                    <h3>French Contract</h3>
+                    <h3>Course Management</h3>
 
                 </div>
 
@@ -1166,15 +1166,22 @@
 
                             </li-->
 
+                        
                             <li> 
 
-                                <a href="{{url('admin/packages')}}"><i class="la la-align-center"></i> <span>Packages</span></a>
+                                <a href="{{url('admin/courses')}}"><i class="la la-align-center"></i> <span>Courses</span></a>
 
                             </li>
 
                             <li> 
 
-                                <a href="{{url('admin/hotels')}}"><i class="la la-building"></i> <span>Hotels</span></a>
+                                <a href="{{url('admin/lessons')}}"><i class="la la-building"></i> <span>Lessons</span></a>
+
+                            </li>
+
+                            <li> 
+
+                                <a href="{{url('admin/contacts')}}"><i class="la la-phone"></i> <span>Contact Requests</span></a>
 
                             </li>
 
